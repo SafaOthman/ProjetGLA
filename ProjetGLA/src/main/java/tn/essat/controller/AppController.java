@@ -65,6 +65,24 @@ public class AppController {
 		daop.deleteById(id);
 		return "redirect:/";
 	}
+	@GetMapping("/notAuthorise")
+	public String get4(Model m) {
+	return "deniedPage";
+}
+	@RequestMapping(value="/login",method = {RequestMethod.POST,RequestMethod.GET})
+	  public  String get9(Model m,@RequestParam(value="error",required=false) String error,
+	                              @RequestParam(value="logout",required=false) String logout) {
+	    System.out.println("eeee");
+	    String errormessage=null;
+	    if(error!=null) {
+	        errormessage="Votre username ou password est incorrect!!";
+	    }
+	    if(logout!=null) {
+	        errormessage="Merci pour votre connexion";
+	    }
+	    m.addAttribute("message",errormessage);
+	    return "login";
+	    }
 
 	
 }
