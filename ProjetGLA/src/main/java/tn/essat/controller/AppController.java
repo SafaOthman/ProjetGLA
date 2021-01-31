@@ -52,7 +52,7 @@ public class AppController {
 		List<Magasin> liste= daom.findAll();
 		m.addAttribute("liste", liste);
 		m.addAttribute("p",p);
-		return "FormAjout";
+		return "FormAdd";
 	}
 	@PostMapping("/saveProduit")
 	public String get4(Model m, @ModelAttribute("p") Produit p) {
