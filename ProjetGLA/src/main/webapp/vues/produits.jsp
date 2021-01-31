@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,15 +14,9 @@
 <tr>
 <td>${p.id }</td><td>${p.titre }</td><td>${p.prix }</td>
 <td><a href="/deleteProduit/${p.id}"> Delete</a> </td>
-
-
 </tr>
 </c:forEach>
 </table>
-
-<sec:authorize access="hasRole('ADMIN')">
-<p> <a href="${cxt}/ajoutProduit"> Ajouter un produit</a> </p>
-
-</sec:authorize>
+<p> <a href="/ajoutProduit"> Ajouter un produit</a> </p>
 </body>
 </html>
